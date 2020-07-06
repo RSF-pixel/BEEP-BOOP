@@ -74,7 +74,7 @@ client.on("message", async message => {
             message.channel.send("Can you guys play cs", {
                 tts: true
                 });
-            message.channel.send("<@198930470061211648><@198869765039718400><@177175891078676482><@160788066678734849><@198887105143767040><@195638742864625664>")    
+            message.channel.send("<@198930470061211648> <@198869765039718400> <@177175891078676482> <@160788066678734849> <@198887105143767040> <@195638742864625664>")    
          break;
             
 
@@ -487,12 +487,10 @@ client.on("message", async message => {
     let autor = message.author;
     let messagetext = messageraw.trim().toLowerCase();
     let messagesplit = messagetext.split(' ');
-    for (i = 0; i < messagesplit.length; i++) {
-     
-        switch(messagesplit[i])
+    switch(messagesplit)
        {
         //In case the member writes 'outlander' 
-        case Boolean(messagesplit[i].includes("outlander")):
+        case Boolean(messagesplit.includes("outlander")):
 
             message.channel.send(autor + " " + "shut the fuck up", {
                 tts: true
@@ -500,7 +498,7 @@ client.on("message", async message => {
             
         break;  
         //In case the member writes 'jojo'
-        case Boolean(messagesplit[i].includes("jojo")):
+        case Boolean(messagesplit.includes("jojo")):
 
             message.channel.send(autor + " " + "shut the fuck up", {
                 tts: true
@@ -508,14 +506,13 @@ client.on("message", async message => {
 
         break;
           //In case the member writes 'oof'
-        case Boolean(zeksplit.includes("oof")):
+        case Boolean(messagesplit.includes("oof")):
             
             message.channel.send("OOF!")
 
         break;
 
-       }  
-    }
+       }     
 })
 
 client.login(process.env.token);

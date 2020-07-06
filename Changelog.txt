@@ -17,6 +17,6 @@
 # Removed the _restart as a command
 # Updated the status of the bot
 # Reworked the code for jojo and outlander trigger words 
-# Optimized the code for all code except the rune random sytem which will be reworked in the next update
+# Optimized the code for all code except the rune random system which will be reworked in the next update
 #
 
