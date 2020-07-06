@@ -487,32 +487,25 @@ client.on("message", async message => {
     let autor = message.author;
     let messagetext = messageraw.trim().toLowerCase();
     let messagesplit = messagetext.split(' ');
-    switch(messagesplit)
-       {
-        //In case the member writes 'outlander' 
-        case Boolean(messagesplit.includes("outlander")):
+    var resposta;
+    var resposta1;    
+    resposta = (Boolean(messagesplit.includes("outlander")) || Boolean(messagesplit.includes("jojo")));
+    resposta1 = (Boolean(zeksplit.includes("oof")))
+    if(Boolean(resposta))
+    {
+        message.channel.send(autor + " " + "shut the fuck up", {
+            tts: true
+            });
 
-            message.channel.send(autor + " " + "shut the fuck up", {
-                tts: true
-                });
-            
-        break;  
-        //In case the member writes 'jojo'
-        case Boolean(messagesplit.includes("jojo")):
+    }
+    else(Boolean(resposta1))
+    {
+        message.channel.send("OOF!")
+    }
 
-            message.channel.send(autor + " " + "shut the fuck up", {
-                tts: true
-                });
 
-        break;
-          //In case the member writes 'oof'
-        case Boolean(messagesplit.includes("oof")):
-            
-            message.channel.send("OOF!")
-
-        break;
-
-       }     
+       
+       
 })
 
 client.login(process.env.token);
