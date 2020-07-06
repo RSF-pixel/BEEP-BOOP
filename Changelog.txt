@@ -1,0 +1,22 @@
+#
+# Alpha 0.2 (22/03/2020)
+#
+# Added _oof as a command
+# Addded _crab as a command
+# Addded _champion as a command
+# The new kick command that is managed by the botcontrollers
+# The new ban command that is managed by the admins 
+# Fixed a bug that resulted in the bot sending multiple messages to only 1 command
+#
+# Alpha 0.2.1 (06/07/2020)
+# The bot is now 24/7 Online for 22 days a month
+#
+# Alpha 0.2.2 (O6//07/2020)
+#
+# Added the _cs command that gives the ability to mentions and tts the team of cs
+# Removed the _restart as a command
+# Updated the status of the bot
+# Reworked the code for jojo and outlander trigger words 
+# Optimized the code for all code except the rune random sytem which will be reworked in the next update
+#
+
