@@ -490,15 +490,15 @@ client.on("message", async message => {
     var resposta;
     var resposta1;    
     resposta = (Boolean(messagesplit.includes("outlander")) || Boolean(messagesplit.includes("jojo")));
-    resposta1 = (Boolean(zeksplit.includes("oof")))
-    if(Boolean(resposta))
+    resposta1 = (Boolean(messagesplit.includes("oof")))
+    if(Boolean(resposta) == true)
     {
         message.channel.send(autor + " " + "shut the fuck up", {
             tts: true
             });
 
     }
-    else(Boolean(resposta1))
+    else(Boolean(resposta1) == true)
     {
         message.channel.send("OOF!")
     }
