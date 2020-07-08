@@ -487,25 +487,47 @@ client.on("message", async message => {
     let autor = message.author;
     let messagetext = messageraw.trim().toLowerCase();
     let messagesplit = messagetext.split(' ');
-    var resposta;
-    var resposta1;    
-    resposta = (Boolean(messagesplit.includes("outlander")) || Boolean(messagesplit.includes("jojo")));
-    resposta1 = (Boolean(messagesplit.includes("oof")))
-    if(Boolean(resposta) == true)
+    var resposta = 0;    
+    if((Boolean(messagesplit.includes("outlander")) || (Boolean(messagesplit.includes("jojo"))))) 
     {
-        message.channel.send(autor + " " + "shut the fuck up", {
-            tts: true
-            });
+        resposta = 1;
+    } 
+    if((Boolean(messagesplit.includes("oof"))))
+    {
+        resposta = 2;
+    }
+    switch(resposta)
+    {
+        case 1:
+            message.channel.send(autor + " " + "shut the fuck up", {
+                tts: true
+                });
+         break;
+        case 2:
+            message.channel.send("OOF!")
+         break;
+
+
+           default:
+
+
+           break;
+    }
+
+    if(messageraw.includes("<@681301511602831365>"))
+    {
+        
 
     }
-    else(Boolean(resposta1) == true)
-    {
-        message.channel.send("OOF!")
-    }
 
 
-       
-       
+
+
+
+    
+    
+
+
 })
 
 client.login(process.env.token);
