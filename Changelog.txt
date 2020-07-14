@@ -28,4 +28,5 @@
 # Added the friendship meters to the bot
 # Added the possibility of having reminders on the bot (ONLY IN HOURS)  
 # Resolved the issue that was blocking the jojo and outlander trigger words to run
-# Reworked the rune system
+# Removed the rune random system from the bot temporary
+# Resolved some bugs regarding case sensitive on oof and trigger words

@@ -1,6 +1,6 @@
 //Config necessary for the bot run
 const {
-    Client
+    Client, Message
 } = require("discord.js");
 const {
     config
@@ -24,6 +24,39 @@ client.on("ready", () => {
 function getRnd(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+function bored(x)
+{
+   switch(x)
+   {
+           case 1:
+            message.send.channel("CS")
+           break;
+           case 2:
+            message.send.channel("LOL")
+           break;
+           case 3:
+            message.send.channel("Destiny 2")
+           break;
+           case 4:
+            message.send.channel("Europa universalis IV")
+           break;
+           case 5:
+            message.send.channel("Porn?")
+           break;
+           case 6:
+            message.send.channel("Videos")
+           break;
+           case 7:
+            message.send.channel("Mine")
+           break;
+           case 8:
+            message.send.channel("Sleep")
+           break;
+           
+   }
+}
+
 //Prefix of the bot 
 const prefix = "_";
 //The prefix one
@@ -76,333 +109,23 @@ client.on("message", async message => {
                 });
             message.channel.send("<@198930470061211648> <@198869765039718400> <@177175891078676482> <@160788066678734849> <@198887105143767040> <@195638742864625664>")    
          break;
-            
+        // Random number generator 
+        case 'random':
 
-            
-
-     case 'rune': {
-
-        let toni = 1;
-        let path = ['Precision', 'Domination', 'Sorcery', 'Resolve', 'Inspiration'];
-        let Precision_keystones = ['Press the attack', 'Lethal Tempo', 'Fleetwork', 'Conqueror'];
-        let Precision_a = ['Overheal', 'Triumph', 'Presense of Mind'];
-        let Precision_b = ['Alacrity', 'Tenacity', 'Bloodline'];
-        let Precision_c = ['Coup de Grace', 'Cut Down', 'Last Stand'];
-        let Domination_keystones = ['Electrocute', 'Predator', 'Dark Harvest', 'Hail of blades'];
-        let Domination_a = ['Cheap Shot', 'Taste of blood', 'Sudden Impact'];
-        let Domination_b = ['Zombie ward', 'Ghost poro', 'Eyeball Collection'];
-        let Domination_c = ['Ravenous Hunter', 'Ingenious Hunter', 'Relenteless Hunter', 'Ultimate Hunter'];
-        let Sorcery_keystones = ['Summon Aery', 'Arcane Comet', 'Phase Rush'];
-        let Sorcery_a = ['Nullifying orb', 'Manaflow band', 'Nimbus Cloak'];
-        let Sorcery_b = ['Transcendense', 'Celerity', 'Absolute Focus'];
-        let Sorcery_c = ['Scorch', 'WaterWalking', 'Gathering Storm'];
-        let Resolve_keystones = ['Ghasp', 'Aftershock', 'Guardian'];
-        let Resolve_a = ['Demolish', 'Font of Fife', 'Shield Bash'];
-        let Resolve_b = ['Conditioning', 'Second wind', 'Bone plating'];
-        let Resolve_c = ['Overgrow', 'Revitalize', 'Unflinching'];
-        let Inspiration_keystones = ['Glacial Augment', 'Unsealed Spellbook', 'Ommistone'];
-        let Inspiration_a = ['Hextech flash', 'Magical Footwear', 'Perfect timming'];
-        let Inspiration_b = ['Future market', 'Minion dematerializer', 'Biscuit Delivery'];
-        let Inspiration_c = ['Cosmic Insight', 'Aproach Velocity', 'Time warp tonic'];
-        let a;
-        let b;
-
-        while (toni == 1) {
-            
-            let rnd = getRnd(1, 5); 
-            a = path[rnd];
-            rnd = getRnd(1, 5);
-            b = path[rnd];
-
-            if (a != b) {
-                toni = 0
-
-            }
-
-        }
-        let rnd;
-        /*Primary Path */
-        switch (a) {
-            case 'Precision': {
-                rnd = getRnd(1, 4);
-                message.channel.send(Precision_keystones[rnd]);
-                rnd = getRnd(1, 3);
-                message.channel.send(Precision_a[rnd]);
-                rnd = getRnd(1, 3);
-                message.channel.send(Precision_b[rnd]);
-                rnd = getRnd(1, 3);
-                message.channel.send(Precision_c[rnd]);
-            }
-
-            break;
-        case 'Domination': {
-            rnd = getRnd(1, 4);
-            message.channel.send(Domination_keystones[rnd]);
-            rnd = getRnd(1, 3);
-            message.channel.send(Domination_a[rnd]);
-            rnd = getRnd(1, 3);
-            message.channel.send(Domination_b[rnd]);
-            rnd = getRnd(1, 3);
-            message.channel.send(Domination_c[rnd]);
-        }
-
+             let rnd = getRnd(1,100);
+             message.channel.send(rnd);
 
         break;
-        case 'Sorcery': {
-            rnd = getRnd(1, 4);
-            message.channel.send(Sorcery_keystones[rnd]);
-            rnd = getRnd(1, 3);
-            message.channel.send(Sorcery_a[rnd]);
-            rnd = getRnd(1, 3);
-            message.channel.send(Sorcery_b[rnd]);
-            rnd = getRnd(1, 3);
-            message.channel.send(Sorcery_c[rnd]);
+        case 'bored':
 
-
-        }
-
-
+             bored(getRnd(1,8))
+        
         break;
-        case 'Resolve': {
-            rnd = getRnd(1, 4);
-            message.channel.send(Resolve_keystones[rnd]);
-            rnd = getRnd(1, 3);
-            message.channel.send(Resolve_a[rnd]);
-            rnd = getRnd(1, 3);
-            message.channel.send(Resolve_b[rnd]);
-            rnd = getRnd(1, 3);
-            message.channel.send(Resolve_c[rnd]);
 
 
-
-        }
-
-
-        break;
-        case 'Inspiration': {
-            rnd = getRnd(1, 4);
-            message.channel.send(Inspiration_keystones[rnd]);
-            rnd = getRnd(1, 3);
-            message.channel.send(Inspiration_a[rnd]);
-            rnd = getRnd(1, 3);
-            message.channel.send(Inspiration_b[rnd]);
-            rnd = getRnd(1, 3);
-            message.channel.send(Inspiration_c[rnd]);
-
-
-        }
-
-
-        break;
-        }
-        /*Secondary Path*/
-        let c;
-        let d;
-        switch(b)
-        {
-            case 'Precision': {
-                
-                while (toni == 1) {
-                    
-                    let rnd = getRnd(1, 3);
-                    c = rnd
-                    rnd = getRnd(1, 3);
-                    d = rnd;
         
-                    if (c != d) {
-                        toni = 0;
-        
-                    }
-        
-                }
-                if (c == 1 || d == 1)
-                {
-                    rnd = getRnd(1,3);
-                    message.channel.send(Precision_a[rnd]);
-                
-                }
-                if (c == 2 || d == 2)
-                {
-                    rnd = getRnd(1, 3);
-                    message.channel.send(Precision_b[rnd]);
-                }
-                if (c == 3 || d == 3)
-                {
-                    rnd = getRnd(1, 3);
-                    message.channel.send(Precision_c[rnd]);
-                }
-                
-            }
-            break;
-            case 'Domination': {
-                
-                while (toni == 1) {
-                    
-                    let rnd = getRnd(1, 3);
-                    c = rnd
-                    rnd = getRnd(1, 3);
-                    d = rnd;
-        
-                    if (c != d) {
-                        toni = 0;
-        
-                    }
-        
-                }
-                if (c == 1 || d == 1)
-                {
-                    rnd = getRnd(1,3);
-                    message.channel.send(Domination_a[rnd]);
-                
-                }
-                if (c == 2 || d == 2)
-                {
-                    rnd = getRnd(1, 3);
-                    message.channel.send(Domination_b[rnd]);
-                }
-                if (c == 3 || d == 3)
-                {
-                    rnd = getRnd(1, 3);
-                    message.channel.send(Domination_c[rnd]);
-                }
-                
-            }
-            break;
-            case 'Sorcery': {
-                
-                while (toni == 1) {
-                    
-                    let rnd = getRnd(1, 3);
-                    c = rnd
-                    rnd = getRnd(1, 3);
-                    d = rnd;
-        
-                    if (c != d) {
-                        toni = 0;
-        
-                    }
-        
-                }
-                if (c == 1 || d == 1)
-                {
-                    rnd = getRnd(1,3);
-                    message.channel.send(Sorcery_a[rnd]);
-                
-                }
-                if (c == 2 || d == 2)
-                {
-                    rnd = getRnd(1, 3);
-                    message.channel.send(Sorcery_b[rnd]);
-                }
-                if (c == 3 || d == 3)
-                {
-                    rnd = getRnd(1, 3);
-                    message.channel.send(Sorcery_c[rnd]);
-                }
-                
-            }
-            break;
-            case 'Resolve': {
-                
-                while (toni == 1) {
-                    
-                    let rnd = getRnd(1, 3);
-                    c = rnd
-                    rnd = getRnd(1, 3);
-                    d = rnd;
-        
-                    if (c != d) {
-                        toni = 0;
-        
-                    }
-        
-                }
-                if (c == 1 || d == 1)
-                {
-                    rnd = getRnd(1,3);
-                    message.channel.send(Resolve_a[rnd]);
-                
-                }
-                if (c == 2 || d == 2)
-                {
-                    rnd = getRnd(1, 3);
-                    message.channel.send(Resolve_b[rnd]);
-                }
-                if (c == 3 || d == 3)
-                {
-                    rnd = getRnd(1, 3);
-                    message.channel.send(Resolve_c[rnd]);
-                }
-                
-            }
-            break;
-            case 'Inspiration': {
-                
-                while (toni == 1) {
-                    
-                    let rnd = getRnd(1, 3);
-                    c = rnd
-                    rnd = getRnd(1, 3);
-                    d = rnd;
-        
-                    if (c != d) {
-                        toni = 0;
-        
-                    }
-        
-                }
-                if (c == 1 || d == 1)
-                {
-                    rnd = getRnd(1,3);
-                    message.channel.send(Inspiration_a[rnd]);
-                
-                }
-                if (c == 2 || d == 2)
-                {
-                    rnd = getRnd(1, 3);
-                    message.channel.send(Inspiration_b[rnd]);
-                }
-                if (c == 3 || d == 3)
-                {
-                    rnd = getRnd(1, 3);
-                    message.channel.send(Inspiration_c[rnd]);
-                }
-                
-            }
-            break;
-
-
-
-
-
-
-         }
-
-
-
-
-
-
-
-
-
-
-
-
+     
     }
-    break
-
-
-    default:
-
-
-
-        break;
-
-    }
-
-
-
 });
 //Ban and kick options only avaibable for the admins and botcontrollers respectively
 client.on('message', message => {
@@ -474,7 +197,25 @@ client.on('message', message => {
 
         break;
 
+         case 'remind':
+             
+             let  messageraw = args[1];
+
+             // hours 
+             // minutes
+             // seconds
+
+
+
+
+
+
+
+
+        break;
+       
         }
+
 })
 
 //Test detection used for detecting certain words from normal text 
@@ -483,9 +224,9 @@ client.on("message", async message => {
     if (message.channel.type != 'text' || message.author.bot) return;
     if (!message.guild) return; /* ANTI ERROR NAS DMS*/
     /*The bot divides the message that the user who made the request  and search for the trigger words and then he tells the user to stfu*/
-    let messageraw = message.content;
+    let messageraw = message.content.toLowerCase();
     let autor = message.author;
-    let messagetext = messageraw.trim().toLowerCase();
+    let messagetext = messageraw.trim();
     let messagesplit = messagetext.split(' ');
     var resposta = 0;    
     if((Boolean(messagesplit.includes("outlander")) || (Boolean(messagesplit.includes("jojo"))))) 
@@ -513,12 +254,24 @@ client.on("message", async message => {
 
            break;
     }
+ 
+   function chat()
+   {
 
-    if(messageraw.includes("<@681301511602831365>"))
-    {
-        
 
-    }
+
+   }
+   
+   let lastperson;
+   if(messageraw.includes("<@681301511602831365>"))
+   {
+      lastperson = message.author;
+   }
+   if((messageraw.includes("<@681301511602831365>")) && (message.author == autor))
+   {
+       chat();
+   }
+       
 
 
 
