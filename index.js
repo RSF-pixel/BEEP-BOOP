@@ -1,6 +1,6 @@
 //Config necessary for the bot run
 const {
-    Client, Message
+    Client
 } = require("discord.js");
 const {
     config
