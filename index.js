@@ -121,9 +121,9 @@ client.on("message", async message => {
              bored(getRnd(1,8))
         
         break;
-
-
         
+
+       
      
     }
 });
@@ -194,27 +194,50 @@ client.on('message', message => {
             else {
                 message.channel.send("You don't have enough power to this command")
             }
+            
+
+        break;
+        //Option to set the players of deceit
+        case 'setdeceit':
+            
+            let players = message.content.toLowerCase();
+            players.replace("_setdeceit"," ")
+            
+        break;
+        //Option to call the players of deceit
+        case 'deceit':
+
+            message.channel.send(players, {
+                tts: true
+                });
 
         break;
 
-         case 'remind':
-             
-             let  messageraw = args[1];
+        case 'deceitinfected':
 
-             // hours 
-             // minutes
-             // seconds
+          let playerssplit = players.split(" ").trim();
+          let rndinfected = getRnd(1,playerssplit.length);
+          for (let i = 0; i < playerssplit.length; i++) {
 
+            if(playerssplit.includes("@"))
+            {
+                message.channel.send("test");
 
-
-
-
-
-
-
+            }
+            
+          }
+          
+        
         break;
+         
+
+         
+
+        
+
+            
        
-        }
+    }
 
 })
 
@@ -243,10 +266,10 @@ client.on("message", async message => {
             message.channel.send(autor + " " + "shut the fuck up", {
                 tts: true
                 });
-         break;
+        break;
         case 2:
             message.channel.send("OOF!")
-         break;
+        break;
 
 
            default:
