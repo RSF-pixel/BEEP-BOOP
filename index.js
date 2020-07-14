@@ -112,7 +112,7 @@ client.on("message", async message => {
         // Random number generator 
         case 'random':
 
-             let rnd = getRnd(1,100);
+             let rnd1 = getRnd(1,100);
              message.channel.send(rnd);
 
         break;
