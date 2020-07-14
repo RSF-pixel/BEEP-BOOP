@@ -201,13 +201,13 @@ client.on('message', message => {
         case 'setdeceit':
             
             let players = message.content.toLowerCase();
-            players.replace("_setdeceit"," ")
-            message.channel.send("Deceit players successfully")
-            
+            players.replace("_setdeceit"," ");
+            message.channel.send("Deceit players successfully");
+            message.channel.send(players);
         break;
         //Option to call the players of deceit
         case 'deceit':
-
+            
             message.channel.send(players, {
                 tts: true
                 });
