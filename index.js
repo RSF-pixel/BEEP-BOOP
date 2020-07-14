@@ -255,32 +255,6 @@ client.on("message", async message => {
            break;
     }
  
-   function chat()
-   {
-
-
-
-   }
-   
-   let lastperson;
-   if(messageraw.includes("<@681301511602831365>"))
-   {
-      lastperson = message.author;
-   }
-   if((messageraw.includes("<@681301511602831365>")) && (message.author == autor))
-   {
-       chat();
-   }
-       
-
-
-
-
-
-    
-    
-
-
 })
 
 client.login(process.env.token);
