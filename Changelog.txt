@@ -26,7 +26,7 @@
 # Added the _random command that sorts a number between 1 and 100
 # Added the _bored command that the bot gives ideas for the humans to entretain themselfs
 # Added the friendship meters to the bot
-# Added the _setdeceit and deceit commands do call the people of deceit 
+# Added the _deceitinfected and _deceit commands do call the people of deceit 
 # Added the possibility of having reminders on the bot (ONLY IN HOURS)  
 # Resolved the issue that was blocking the jojo and outlander trigger words to run
 # Removed the rune random system from the bot temporary

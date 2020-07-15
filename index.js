@@ -196,37 +196,22 @@ client.on('message', message => {
             }
             
 
-        break;
-        //Option to set the players of deceit
-        case 'setdeceit':
-            
-            let players = message.content.toLowerCase();
-            players.replace("_setdeceit"," ");
-            message.channel.send("Deceit players successfully");
-        break;
+        break;      
         //Option to call the players of deceit
         case 'deceit':
             
-            message.channel.send(players, {
-                tts: true
-                });
+            message.channel.send("<@198930470061211648> <@177175891078676482> <@195638742864625664> <@236622987506352128> <@160788066678734849> <@306459672267718668> <@299321163841142786>")
 
         break;
-
+        //Infected roullete
         case 'deceitinfected':
 
-          let playerssplit = players.split(" ").trim();
-          let rndinfected = getRnd(1,playerssplit.length);
-          for (let i = 0; i < playerssplit.length; i++) {
-
-            if(playerssplit.includes("@"))
-            {
-                message.channel.send("test");
-
-            }
-            
+         let players = ["<@198930470061211648>","<@177175891078676482>","<@195638742864625664>","<@236622987506352128>","<@160788066678734849>","<@306459672267718668>","<@299321163841142786>"]
+         let rndinfected = getRnd(0,6)
+         for (let i = 0; i < 2; i++) {
+            message.send(players[rndinfected]);
           }
-          
+
         
         break;
          
