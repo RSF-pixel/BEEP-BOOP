@@ -24,6 +24,13 @@ client.on("ready", () => {
 function getRnd(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+let rewind;
+let interval;
+setInterval(function sendTimedMessage(a) {
+    message.channel.send(a)
+    rewind = 0;
+
+}, interval)
 
 
 //Prefix of the bot 
@@ -246,32 +253,28 @@ client.on('message', message => {
         case 'remind':
             //Only 1 rewind per time
             //Rewind option 
-            let rewind;
-            if (rewind == 0) {
+            if(rewind == 1)
+            {
+                message.channel.send("Rewind already occupied")
+            }
+            else
+            {
 
 
                 var hours = args[1];
-                let interval = hours * 3600000;
+                interval = hours * 3600000;
                 let messageRewind = ""
                 for (let i = 2; i < args.length; i++) {
 
                     messageRewind += "" + args[i];
                 }
-                sendTimedMessage();
+                sendTimedMessage(messageRewind);
                 message.channel.send("Remind set successfully")
                 rewind = 1;
-                setInterval(function sendTimedMessage() {
-
-                    message.channel.send(messageRewind)
-                    rewind = 0;
-
-                }, interval)
+                
                 
             }
-            else if (rewind == 1)
-            {
-               message.channel.send("Rewind already occupied")
-            }
+            
 
             break;
 
