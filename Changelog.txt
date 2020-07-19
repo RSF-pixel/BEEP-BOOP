@@ -21,13 +21,11 @@
 #
 # Alpha 0.3 The social update (07/07/2020)
 #
-# Added the _roast command that serves to keep the bot superiority of the humans
-# Added the possibility of engaging on a conversation with the bot when you mention it
+# Added the _roast command that serves to keep the bot superiority over the humans
 # Added the _random command that sorts a number between 1 and 100
 # Added the _bored command that the bot gives ideas for the humans to entretain themselfs
-# Added the friendship meters to the bot
-# Added the _deceitinfected and _deceit commands do call the people of deceit 
-# Added the possibility of having reminders on the bot (ONLY IN HOURS)  
+# Added the _infected and _deceit commands do call the people of deceit 
+# Added the possibility of having reminder on the bot (ONLY IN HOURS)  
 # Resolved the issue that was blocking the jojo and outlander trigger words to run
 # Removed the rune random system from the bot temporary
 # Resolved some bugs regarding case sensitive on oof and trigger words
