@@ -258,6 +258,7 @@ client.on('message', message => {
                     messageRewind += "" + args[i];
                 }
                 sendTimedMessage();
+                message.channel.send("Remind set successfully")
                 rewind = 1;
                 setInterval(function sendTimedMessage() {
 
