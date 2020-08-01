@@ -26,22 +26,76 @@ function getRnd(min, max) {
 }
 //Prefix of the bot 
 const prefix = "_";
-//The prefix one
-client.on("message", async message => {
+//Ban and kick options only avaibable for the admins and botcontrollers respectively
+client.on('message', message => {
+    //CHANGE LATER WHEN BOT IS READY
+    //The ids from the certain roles
+    let botcontroller = message.member.roles.has('417744133994708995');
+    let admin = message.member.roles.has('<688827881127804999')
+    let args = message.content.substring(prefix.length).split(" ");
+    switch (args[0]) {
+        //Kick option only avaibable to the bot controllers
+        case 'kick':
+            if (botcontroller) {
 
-    //Checklist for the code to run
-    //What is sent for the bot needs to be text,and needs to have the prefix for the bot 
-    if (message.channel.type != 'text' || message.author.bot) return;
-    if (!message.guild) return; /* ANTI ERROR NAS DMS*/
-    if (!message.content.startsWith(prefix)) return;
-    //Getting the text for the message sent
-    let args = message.content.slice(prefix.length).trim().split(/ +/g);
-    let cmd = args.shift().toLowerCase();
+                if (!args[1]) message.channel.send('DIGA ME UM!')
 
-    //All the options that are available with the prefix 
-    switch (cmd) {
+                const user = message.mentions.users.first();
+                if (user) {
+                    const member = message.guild.member(user);
+                    if (member) {
+                        member.kick('Kicked!').then(() => {
+                            message.reply('The member' + ' ' + user.tag + ' ' + 'was kicked');
+                        }).catch(error => {
+                            message.reply('I was unable to kick the member');
+                            console.log(error)
+                        });
 
-        //Ping option for checking possible problems with the api or bot 
+                    } else {
+                        message.reply('That member is not in the server')
+
+                    }
+
+                }
+            }
+            //In case that you try to ban a user that is more powerfull than you
+            else {
+                message.channel.send("You don't have enough power to this command")
+
+            }
+
+            break;
+
+        case 'ban':
+            //Ban option only avaibable to the Admins
+            if (admin) {
+
+                if (!args[1]) message.channel.send('DIGA ME UM!')
+                const user = message.mentions.users.first();
+                if (user) {
+                    const member = message.guild.member(user);
+                    if (member) {
+                        member.ban({
+                            reason: 'Imagine being Banned by a bot '
+                        }).then(() => {
+                            message.reply('The member' + ' ' + user.tag + ' ' + 'was BANNED');
+                        })
+
+                    } else {
+                        message.reply('That member is not in the server')
+
+                    }
+
+                }
+            }
+            //Ban option only avaibable to the Admins
+            else {
+                message.channel.send("You don't have enough power to this command")
+            }
+
+            break;
+
+            //Ping option for checking possible problems with the api or bot 
         case 'ping':
             let msg = await message.channel.send('Ping');
             msg.edit('Ping:\nLatency is' + Math.floor(msg.createdTimestamp - message.createdTimestamp) + 'ms \n API Latency is ' + Math.round(client.ping) + 'ms');
@@ -92,7 +146,7 @@ client.on("message", async message => {
                     message.channel.send("CS")
                     break;
                 case 2:
-                    message.channel.send("LOL")
+                    message.channel.send("League of Legends")
                     break;
                 case 3:
                     message.channel.send("Destiny 2")
@@ -164,80 +218,6 @@ client.on("message", async message => {
 
 
 
-
-
-    }
-});
-//Ban and kick options only avaibable for the admins and botcontrollers respectively
-client.on('message', message => {
-    //CHANGE LATER WHEN BOT IS READY
-    //The ids from the certain roles
-    let botcontroller = message.member.roles.has('217716503729012736');
-    let admin = message.member.roles.has('217716522808901632')
-    let args = message.content.substring(prefix.length).split(" ");
-    switch (args[0]) {
-        //Kick option only avaibable to the bot controllers
-        case 'kick':
-            if (botcontroller) {
-
-                if (!args[1]) message.channel.send('DIGA ME UM!')
-
-                const user = message.mentions.users.first();
-                if (user) {
-                    const member = message.guild.member(user);
-                    if (member) {
-                        member.kick('Kicked!').then(() => {
-                            message.reply('The member' + ' ' + user.tag + ' ' + 'was kicked');
-                        }).catch(error => {
-                            message.reply('I was unable to kick the member');
-                            console.log(error)
-                        });
-
-                    } else {
-                        message.reply('That member is not in the server')
-
-                    }
-
-                }
-            }
-            //In case that you try to ban a user that is more powerfull than you
-            else {
-                message.channel.send("You don't have enough power to this command")
-
-            }
-
-            break;
-
-        case 'ban':
-            //Ban option only avaibable to the Admins
-            if (admin) {
-
-                if (!args[1]) message.channel.send('DIGA ME UM!')
-                const user = message.mentions.users.first();
-                if (user) {
-                    const member = message.guild.member(user);
-                    if (member) {
-                        member.ban({
-                            reason: 'Imagine being Banned by a bot '
-                        }).then(() => {
-                            message.reply('The member' + ' ' + user.tag + ' ' + 'was BANNED');
-                        })
-
-                    } else {
-                        message.reply('That member is not in the server')
-
-                    }
-
-                }
-            }
-            //Ban option only avaibable to the Admins
-            else {
-                message.channel.send("You don't have enough power to this command")
-            }
-
-
-            break;
-
     }
 
 })
@@ -259,6 +239,9 @@ client.on("message", async message => {
     if ((Boolean(messagesplit.includes("oof")))) {
         resposta = 2;
     }
+    if ((Boolean(messagesplit.includes("f")))) {
+        resposta = 3
+    }
     switch (resposta) {
         case 1:
             message.channel.send(autor + " " + "shut the fuck up", {
@@ -267,6 +250,9 @@ client.on("message", async message => {
             break;
         case 2:
             message.channel.send("OOF!")
+            break;
+        case 3:
+            message.channel.send("F's in the chat bois")
             break;
 
 
