@@ -28,6 +28,7 @@
 # Added the _infected and _deceit commands do call the people of deceit
 # Added a new trigger word (F) that makes the players pay the respects 
 # Adapted the kick and ban commands to the new server 
+# Centralized and optimized the code of the bot
 # Resolved the issue that was blocking the jojo and outlander trigger words to run
 # Removed the rune random system from the bot temporary
 # Resolved some bugs regarding case sensitive on oof and trigger words

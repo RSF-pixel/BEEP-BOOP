@@ -26,6 +26,7 @@ function getRnd(min, max) {
 }
 //Prefix of the bot 
 const prefix = "_";
+let autor;
 //Ban and kick options only avaibable for the admins and botcontrollers respectively
 client.on('message', message => {
     //CHANGE LATER WHEN BOT IS READY
@@ -33,6 +34,7 @@ client.on('message', message => {
     let botcontroller = message.member.roles.has('417744133994708995');
     let admin = message.member.roles.has('<688827881127804999')
     let args = message.content.substring(prefix.length).split(" ");
+    autor = message.author
     switch (args[0]) {
         //Kick option only avaibable to the bot controllers
         case 'kick':
@@ -158,7 +160,7 @@ client.on('message', message => {
                     message.channel.send("Videos")
                     break;
                 case 6:
-                    message.channel.send("Mine")
+                    message.channel.send("Minecraft")
                     break;
                 case 7:
                     message.channel.send("Sleep")
@@ -185,27 +187,44 @@ client.on('message', message => {
 
             break;
 
+        case 'commands':
+
+            message.channel.send("Commands\n _ping Checks the ping of the bot and the api lag\n _kick Kicks the person mentioned but you have to have the bot commander role\n _ban Bans the person mentioned but you have to be admin"+
+            "\n _crab Summons the crab meme\n _champion Gives a random champion from League of Legends\n _porn Gives a random link of porn\n _cs Calls everyone who plays cs \n _random Gives a random number between 1 and 10"+
+            "\n _bored Gives the players something to think about\ _infected Gives the infected players on deceit\n _deceit Calls the deceit players\n _roast Asserts bot dominance")
+
+         break;
         case 'roast':
             //Beep boop btw 
 
             if (message.content.includes("@")) {
-                let roastrnd = getRnd(1, )
+                let roastrnd = getRnd(1,4)
                 switch (roastrnd) {
                     case 1:
-                        message.channel.send(autor + "Are you really trying to use a bot to roast your friends?", {
+                        message.channel.send(autor + "Are you really trying to use a bot to roast your friends..", {
                             tts: true
                         });
                         break;
                     case 2:
-                        message.channel.send("Brain check..", {
+                        message.channel.send("Checking the brain of.." + autor, {
                             tts: true
                         });
                         message.channel.send("Brain dead ✅", {
                             tts: true
                         });
                         break;
+                    case 3:
+                        message.channel.send("Yikes..")
+                        break;
+                    case 4:
+                        for (let i = 0; i <= 5; i++) {
+                            message.channel.send("No", {
+                                tts: true
+                            });
+                            
+                        }                                           
+                    break;
                 }
-
 
             }
 
@@ -229,7 +248,7 @@ client.on("message", async message => {
     if (!message.guild) return; /* ANTI ERROR NAS DMS*/
     /*The bot divides the message that the user who made the request  and search for the trigger words and then he tells the user to stfu*/
     let messageraw = message.content.toLowerCase();
-    let autor = message.author;
+    autor = message.author;
     let messagetext = messageraw.trim();
     let messagesplit = messagetext.split(' ');
     var resposta = 0;
