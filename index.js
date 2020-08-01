@@ -27,11 +27,7 @@ function getRnd(min, max) {
 
 let rewind;
 let interval;
-setInterval(function sendTimedMessage(a) {
-    message.channel.send(a)
-    rewind = 0;
 
-}, interval)
 
 
 //Prefix of the bot 
@@ -186,7 +182,7 @@ client.on('message', message => {
     let botcontroller = message.member.roles.has('217716503729012736');
     let admin = message.member.roles.has('217716522808901632')
     let args = message.content.substring(prefix.length).split(" ");
-    
+
     setInterval(function sendTimedMessage(a) {
         message.channel.send(a)
         rewind = 0;
