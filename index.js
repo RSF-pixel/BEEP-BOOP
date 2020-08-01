@@ -24,6 +24,7 @@ client.on("ready", () => {
 function getRnd(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
 let rewind;
 let interval;
 setInterval(function sendTimedMessage(a) {
@@ -185,6 +186,12 @@ client.on('message', message => {
     let botcontroller = message.member.roles.has('217716503729012736');
     let admin = message.member.roles.has('217716522808901632')
     let args = message.content.substring(prefix.length).split(" ");
+    
+    setInterval(function sendTimedMessage(a) {
+        message.channel.send(a)
+        rewind = 0;
+    
+    }, interval)
 
     switch (args[0]) {
         //Kick option only avaibable to the bot controllers
