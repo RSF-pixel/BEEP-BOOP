@@ -97,7 +97,7 @@ client.on('message', message => {
 
             //Ping option for checking possible problems with the api or bot 
         case 'ping':
-            let msg = await message.channel.send('Ping');
+            let msg = message.channel.send('Ping');
             msg.edit('Ping:\nLatency is' + Math.floor(msg.createdTimestamp - message.createdTimestamp) + 'ms \n API Latency is ' + Math.round(client.ping) + 'ms');
 
 
