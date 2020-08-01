@@ -134,7 +134,7 @@ client.on('message', message => {
         case 'random':
 
             let rnd1 = getRnd(1, 100);
-            message.channel.send(rnd);
+            message.channel.send(rnd1);
 
             break;
             //Bored command
