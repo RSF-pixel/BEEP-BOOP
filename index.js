@@ -24,12 +24,6 @@ client.on("ready", () => {
 function getRnd(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
-let rewind;
-let interval;
-
-
-
 //Prefix of the bot 
 const prefix = "_";
 //The prefix one
@@ -182,13 +176,6 @@ client.on('message', message => {
     let botcontroller = message.member.roles.has('217716503729012736');
     let admin = message.member.roles.has('217716522808901632')
     let args = message.content.substring(prefix.length).split(" ");
-
-    setInterval(function sendTimedMessage(a) {
-        message.channel.send(a)
-        rewind = 0;
-    
-    }, interval)
-
     switch (args[0]) {
         //Kick option only avaibable to the bot controllers
         case 'kick':
@@ -249,35 +236,6 @@ client.on('message', message => {
                 message.channel.send("You don't have enough power to this command")
             }
 
-
-            break;
-
-
-        case 'remind':
-            //Only 1 rewind per time
-            //Rewind option 
-            if(rewind == 1)
-            {
-                message.channel.send("Rewind already occupied")
-            }
-            else
-            {
-
-
-                var hours = args[1];
-                interval = hours * 3600000;
-                let messageRewind = ""
-                for (let i = 2; i < args.length; i++) {
-
-                    messageRewind += "" + args[i];
-                }
-                sendTimedMessage(messageRewind);
-                message.channel.send("Remind set successfully")
-                rewind = 1;
-                
-                
-            }
-            
 
             break;
 
