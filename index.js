@@ -112,6 +112,11 @@ client.on("message", async message => {
                 case 8:
                     message.send.channel("Sleep")
                     break;
+
+                    default:
+                        message.channel.send("Error")
+                    break;
+
             }
 
             break;
