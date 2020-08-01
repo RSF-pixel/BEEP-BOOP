@@ -86,39 +86,35 @@ client.on("message", async message => {
             //Bored command
         case 'bored':
 
-            let rndbored = getRnd(1, 8)
+            let rndbored = getRnd(1, 7)
             switch (rndbored) {
                 case 1:
-                    message.send.channel("CS")
+                    message.channel.send("CS")
                     break;
                 case 2:
-                    message.send.channel("LOL")
+                    message.channel.send("LOL")
                     break;
                 case 3:
-                    message.send.channel("Destiny 2")
+                    message.channel.send("Destiny 2")
                     break;
                 case 4:
-                    message.send.channel("Europa universalis IV")
+                    message.channel.send("Europa universalis IV")
                     break;
                 case 5:
-                    message.send.channel("Porn?")
+                    message.channel.send("Videos")
                     break;
                 case 6:
-                    message.send.channel("Videos")
+                    message.channel.send("Mine")
                     break;
                 case 7:
-                    message.send.channel("Mine")
-                    break;
-                case 8:
-                    message.send.channel("Sleep")
+                    message.channel.send("Sleep")
                     break;
 
-                    default:
-                        message.channel.send("Error")
+                default:
+                    message.channel.send("Error")
                     break;
 
             }
-
             break;
             //Deceit infected
         case 'infected':
@@ -133,21 +129,19 @@ client.on("message", async message => {
 
             message.channel.send("<@198930470061211648> <@198887105143767040> <@195638742864625664> <@236622987506352128> <@160788066678734849> <@306459672267718668> <@299321163841142786>")
 
-        break;
+            break;
 
         case 'roast':
-             //Beep boop btw 
+            //Beep boop btw 
 
-             if(message.content.includes("@"))
-             {
-                let roastrnd = getRnd(1,)
-                switch(roastrnd)
-                {
-                    case 1:                   
-                    message.channel.send(autor + "Are you really trying to use a bot to roast your friends?", {
-                        tts: true
-                    });
-                    break;
+            if (message.content.includes("@")) {
+                let roastrnd = getRnd(1, )
+                switch (roastrnd) {
+                    case 1:
+                        message.channel.send(autor + "Are you really trying to use a bot to roast your friends?", {
+                            tts: true
+                        });
+                        break;
                     case 2:
                         message.channel.send("Brain check..", {
                             tts: true
@@ -155,18 +149,18 @@ client.on("message", async message => {
                         message.channel.send("Brain dead ✅", {
                             tts: true
                         });
-                    break;
+                        break;
                 }
-                
-
-             }
 
 
+            }
 
 
 
 
-         break;
+
+
+            break;
 
 
 
