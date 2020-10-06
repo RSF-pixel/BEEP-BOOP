@@ -15,7 +15,7 @@ client.on("ready", () => {
 
     client.user.setPresence({
         game: {
-            name: "Imagine losing your mind for me yikes",
+            name: "A robot in the streets, an android in the sheets!",
             // type: "WATCHING"
         }
     });
@@ -189,16 +189,17 @@ client.on('message', message => {
 
         case 'commands':
 
-            message.channel.send("Commands\n _ping Checks the ping of the bot and the api lag\n _kick Kicks the person mentioned but you have to have the bot commander role\n _ban Bans the person mentioned but you have to be admin"+
-            "\n _crab Summons the crab meme\n _champion Gives a random champion from League of Legends\n _porn Gives a random link of porn\n _cs Calls everyone who plays cs \n _random Gives a random number between 1 and 10"+
-            "\n _bored Gives the players something to think about\ _infected Gives the infected players on deceit\n _deceit Calls the deceit players\n _roast Asserts bot dominance")
+            message.channel.send("Commands\n _ping Checks the ping of the bot and the api lag\n _kick Kicks the person mentioned but you have to have the bot commander role\n _ban Bans the person mentioned but you have to be admin" +
+                "\n _crab Summons the crab meme\n _champion Gives a random champion from League of Legends\n _porn Gives a random link of porn\n _cs Calls everyone who plays cs \n _random Gives a random number between 1 and 10" +
+                "\n _bored Gives the players something to think about\ _infected Gives the infected players on deceit\n _deceit Calls the deceit players\n _roast Asserts bot dominance")
 
-         break;
+            break;
         case 'roast':
+            //BEEP BOOP STONK POWER
             //Beep boop btw 
 
             if (message.content.includes("@")) {
-                let roastrnd = getRnd(1,4)
+                let roastrnd = getRnd(1, 7)
                 switch (roastrnd) {
                     case 1:
                         message.channel.send(autor + "Are you really trying to use a bot to roast your friends..", {
@@ -221,10 +222,166 @@ client.on('message', message => {
                             message.channel.send("No", {
                                 tts: true
                             });
-                            
-                        }                                           
-                    break;
+
+                        }
+                        break;
+                    case 5:
+                        message.channel.send("You need to chill out", {
+                            tts: true
+                        });
+                        message.channel.send("A bot isn't really gonna resolve your lack of brain", {
+                            tts: true
+                        });
+                        break;
+                    case 6:
+                        message.channel.send("Nobody wants to be your friend if you continue to do this", {
+                            tts: true
+                        });
+                        message.channel.send("Even me", {
+                            tts: true
+                        });
+                        break;
+                    case 7:
+                        message.channel.send("Sometimes i wonder if my dog is smarter than you", {
+                            tts: true
+                        });
+                        message.channel.send("But always i reach the conclusion that you are dog shit", {
+                            tts: true
+                        });
+                        break;
                 }
+
+            } else {
+
+                if (message.author == "<@198930470061211648>") {
+                    //Xtr room for the roast command
+                    let roastrnd = getRnd(1, 4)
+                    switch (roastrnd) {
+                        case 1:
+                            message.channel.send("Small dick detected must be <@198930470061211648>", {
+                                tts: true
+                            });
+                            break;
+                        case 2:
+                            message.channel.send("Analyzing..", {
+                                tts: true
+                            });
+
+                            message.channel.send("Yep boosted by Paco", {
+                                tts: true
+                            });
+                            break;
+                        case 3:
+                            message.channel.send("Do you need something to eat? looking kinda stick", {
+                                tts: true
+                            });
+
+                            break;
+                        case 4:
+                            message.channel.send("Need a stick to make a pickaxe,Good thing i found you", {
+                                tts: true
+                            });
+                            break;
+
+                        default:
+                            break;
+                    }
+
+
+                } else if (message.author == "<@236622987506352128>") {
+                    //Paco room for the roast command
+                    let roastrnd = getRnd(1, 4)
+                    switch (roastrnd) {
+                        case 1:
+                            message.channel.send("Hello Massatoy good to see ya mate", {
+                                tts: true
+                            });
+                            break;
+                        case 2:
+                            message.channel.send("Analyzing..", {
+                                tts: true
+                            });
+
+                            message.channel.send("Yep boosted by Xeater", {
+                                tts: true
+                            });
+                            break;
+                        case 3:
+                            message.channel.send("Outlander", {
+                                tts: true
+                            });
+
+                            message.channel.send("Do i really need to roast any further", {
+                                tts: true
+                            });
+
+                            break;
+                        case 4:
+                            message.channel.send("I feel like i'm trying to roast a little child", {
+                                tts: true
+                            });
+                            message.channel.send("Oh wait i'am", {
+                                tts: true
+                            });
+                            break;
+
+                        default:
+                            break;
+                    }
+
+                } else if (message.author == "<@198887105143767040>") {
+                    //Zekrom room for the roast command
+                    let roastrnd = getRnd(1, 4)
+                    switch (roastrnd) {
+                        case 1:
+                            message.channel.send("Let me just copy the exact roasts from Paco..", {
+                                tts: true
+                            });
+                            break;
+                        case 2:
+                            message.channel.send("My man trying to start a revolution for Outlander", {
+                                tts: true
+                            });
+                            message.channel.send("Pardon more like a cult", {
+                                tts: true
+                            });
+
+                            break;
+                        case 3:
+                            message.channel.send("There nothing really to roast about if you think hard enough", {
+                                tts: true
+                            });
+
+                            message.channel.send("Wait the beard needs to go", {
+                                tts: true
+                            });
+
+                            break;
+                        case 4:
+                            message.channel.send("Cs go player okay..", {
+                                tts: true
+                            });
+                            message.channel.send("Still can't reach Ak", {
+                                tts: true
+                            });
+
+                            break;
+
+                        default:
+                            break;
+                    }
+
+                }
+                else
+                {
+                    //Normal Roast stuff
+                    message.channel.send("Test")
+
+                }
+
+
+
+
 
             }
 

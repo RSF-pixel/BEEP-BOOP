@@ -19,10 +19,10 @@
 # Reworked the code for jojo and outlander trigger words 
 # Optimized the code for all code except the rune random system which will be reworked in the next update
 #
-# Alpha 0.3 The social update (07/07/2020)
+# Alpha 0.3 The social update (06/10/2020)
 #
 # Added the _commands command that helps the users know about all the diferent commands
-# Added the _roast command that serves to keep the bot superiority over the humans
+# Added the _roast command that serves to keep the bot superiority over the humans (Xtr,paco,zek) only supported
 # Added the _random command that sorts a number between 1 and 100
 # Added the _bored command that the bot gives ideas for the humans to entretain themselfs
 # Added the _infected and _deceit commands do call the people of deceit
