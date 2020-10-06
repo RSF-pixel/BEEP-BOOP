@@ -5,6 +5,7 @@ const {
 const {
     config
 } = require("dotenv");
+var cron = require("cron");
 
 const client = new Client({
     disableEveryone: true

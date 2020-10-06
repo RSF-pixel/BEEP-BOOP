@@ -32,3 +32,9 @@
 # Resolved the issue that was blocking the jojo and outlander trigger words to run
 # Removed the rune random system from the bot temporary
 # Resolved some bugs regarding case sensitive on oof and trigger words
+#
+Alpha 0.4 The Well Being update
+#
+#
+#
+#
