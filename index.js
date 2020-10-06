@@ -404,6 +404,13 @@ client.on("message", async message => {
     //Checklist necessary for the bot to run
     if (message.channel.type != 'text' || message.author.bot) return;
     if (!message.guild) return; /* ANTI ERROR NAS DMS*/
+    let scheduledMessage = new cron.CronJob('00 00 00 * * *', () => {
+        // This runs every day at 10:30:00, you can do anything you want
+        message.channel.send('SLEEP :rage:');
+      });
+      
+    // When you want to start it, use:
+      scheduledMessage.start()
     /*The bot divides the message that the user who made the request  and search for the trigger words and then he tells the user to stfu*/
     let messageraw = message.content.toLowerCase();
     autor = message.author;
