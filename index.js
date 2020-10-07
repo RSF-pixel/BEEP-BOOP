@@ -143,7 +143,7 @@ client.on('message', message => {
             //Bored command
         case 'bored':
             if (message.author == "<@198930470061211648>") {
-                let rndbored = getRnd(1,11)
+                let rndbored = getRnd(1, 11)
                 switch (rndbored) {
                     case 1:
                         message.channel.send("Rainbow")
@@ -166,16 +166,16 @@ client.on('message', message => {
                     case 7:
                         message.channel.send("Call of Duty")
                         break;
-                        case 8:
+                    case 8:
                         message.channel.send("Left 4 Dead 2")
                         break;
-                        case 9:
+                    case 9:
                         message.channel.send("World war Z")
                         break;
-                        case 10:
+                    case 10:
                         message.channel.send("Ghost Recon")
                         break;
-                        case 11:
+                    case 11:
                         message.channel.send("Rocket League")
                         break;
 
@@ -184,19 +184,6 @@ client.on('message', message => {
                         break;
 
                 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             } else {
                 let rndbored = getRnd(1, 7)
@@ -265,7 +252,7 @@ client.on('message', message => {
             message.channel.send("The new minecraft update doesn't have an official release date but it's said that it will be released mid 2021\n Based on my prediction the time left for the new minecraft update is" + time);
             break;
         case 'silence':
-            let personToSilence = (args[1] + "silence,peasant");
+            let personToSilence = (args[1] + " silence,peasant");
             message.channel.send(personToSilence, {
                 tts: true
             });
