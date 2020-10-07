@@ -192,8 +192,17 @@ client.on('message', message => {
 
             message.channel.send("Commands\n _ping Checks the ping of the bot and the api lag\n _kick Kicks the person mentioned but you have to have the bot commander role\n _ban Bans the person mentioned but you have to be admin" +
                 "\n _crab Summons the crab meme\n _champion Gives a random champion from League of Legends\n _porn Gives a random link of porn\n _cs Calls everyone who plays cs \n _random Gives a random number between 1 and 10" +
-                "\n _bored Gives the players something to think about\ _infected Gives the infected players on deceit\n _deceit Calls the deceit players\n _roast Asserts bot dominance")
+                "\n _bored Gives the players something to think about\n _infected Gives the infected players on deceit\n _deceit Calls the deceit players\n _roast Asserts bot dominance")
 
+            break;
+
+
+        case 'minecraft':
+            let today = new Date();
+            var prediction = new Date(today.getFullYear(), 5, 1)
+            var oneDay = 1000 * 60 * 60 * 24
+            console.log(Math.ceil((prediction.getTime() - today.getTime()) / (oneDay)) + "days left until Christmas!");            
+            //message.channel.send("The new minecraft update doesn't have an official release date but it's said that it will be released mid 2021\n Based on my prediction the time left for the new minecraft update is ")
             break;
         case 'roast':
             //BEEP BOOP STONK POWER
@@ -372,9 +381,7 @@ client.on('message', message => {
                             break;
                     }
 
-                }
-                else
-                {
+                } else {
                     //Normal Roast stuff
                     message.channel.send("Test")
 
@@ -404,13 +411,17 @@ client.on("message", async message => {
     //Checklist necessary for the bot to run
     if (message.channel.type != 'text' || message.author.bot) return;
     if (!message.guild) return; /* ANTI ERROR NAS DMS*/
-    let scheduledMessage = new cron.CronJob('00 00 00 * * *', () => {
-        // This runs every day at 10:30:00, you can do anything you want
-        message.channel.send('SLEEP :rage:');
-      });
-      
+    //Sleep mechanic
+    let scheduledMessage = new cron.CronJob('59 59 23 * * *', () => {
+        // Seconds Minutes Hours
+        //Every day the bot sends a message telling the group to sleep at midnight
+        message.channel.send("SLEEP :rage:", {
+            tts: true
+        });
+    });
+
     // When you want to start it, use:
-      scheduledMessage.start()
+    scheduledMessage.start()
     /*The bot divides the message that the user who made the request  and search for the trigger words and then he tells the user to stfu*/
     let messageraw = message.content.toLowerCase();
     autor = message.author;
