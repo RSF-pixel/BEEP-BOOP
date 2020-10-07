@@ -444,7 +444,7 @@ client.on('message', message => {
         case 'artifacts':
 
             message.channel.send("This is all the Artifacts Genshi impact has in moment ")
-            message.channel.send("```Name|2 piece bonus|4 piece bonus\n Adventurer|```")
+            message.channel.send("```Name|2 piece bonus|4 piece bonus\nAdventurer|Max HP increased by 1,000.|Opening chest regenerates 30% Max HP over 5s.\nLucky Dog|DEF increased by 100.|Picking up Mora restores 300 HP.\nTraveling Doctor|Increases incoming healing by 20%.|Using Elemental Burst restores 20% HP.\n```")
 
 
 
