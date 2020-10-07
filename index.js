@@ -126,7 +126,7 @@ client.on('message', message => {
             message.channel.send("https://www.pornhub.com/random")
 
             break;
-            //Cs option to call everyone who plays cs
+            //CS option to call everyone who plays cs
         case 'cs':
             message.channel.send("Can you guys play cs", {
                 tts: true
@@ -142,6 +142,7 @@ client.on('message', message => {
             break;
             //Bored command
         case 'bored':
+            //Specific Bored commmand for xtr
             if (message.author == "<@198930470061211648>") {
                 let rndbored = getRnd(1, 11)
                 switch (rndbored) {
@@ -186,6 +187,7 @@ client.on('message', message => {
                 }
 
             } else {
+                //Normal bored command
                 let rndbored = getRnd(1, 7)
                 switch (rndbored) {
                     case 1:
@@ -222,19 +224,15 @@ client.on('message', message => {
             break;
             //Deceit infected
         case 'infected':
-
             message.channel.send("<@236622987506352128> is the infected", {
                 tts: true
             });
             break;
-
             //Option to call the players of deceit
         case 'deceit':
-
-            message.channel.send("<@198930470061211648> <@198887105143767040> <@195638742864625664> <@236622987506352128> <@160788066678734849> <@306459672267718668> <@299321163841142786>")
-
+            message.channel.send("<@198930470061211648> <@198887105143767040> <@195638742864625664> <@236622987506352128> <@160788066678734849> <@306459672267718668> <@299321163841142786>");
             break;
-
+            //Commands command just gives every command existent on the bot
         case 'commands':
 
             message.channel.send("Commands\n _ping Checks the ping of the bot and the api lag\n _kick Kicks the person mentioned but you have to have the bot commander role\n _ban Bans the person mentioned but you have to be admin" +
@@ -242,15 +240,15 @@ client.on('message', message => {
                 "\n _bored Gives the players something to think about\n _infected Gives the infected players on deceit\n _deceit Calls the deceit players\n _roast Asserts bot dominance")
 
             break;
-
-
+            //Countdown of day until the new minecraft update comes out
         case 'minecraft':
             let today = new Date();
             var prediction = new Date(today.getFullYear() + 1, 5, 1);
             var oneDay = 1000 * 60 * 60 * 24;
             let time = (Math.ceil((prediction.getTime() - today.getTime()) / (oneDay)) + "Days");
-            message.channel.send("The new minecraft update doesn't have an official release date but it's said that it will be released mid 2021\n Based on my prediction the time left for the new minecraft update is" + time);
+            message.channel.send("The new minecraft update doesn't have an official release date but it's said that it will be released mid 2021\n Based on my prediction the time left for the new minecraft update is " + time);
             break;
+            //Silence command 
         case 'silence':
             let personToSilence = (args[1] + " silence,peasant");
             message.channel.send(personToSilence, {
@@ -285,7 +283,6 @@ client.on('message', message => {
                             message.channel.send("No", {
                                 tts: true
                             });
-
                         }
                         break;
                     case 5:
@@ -315,7 +312,6 @@ client.on('message', message => {
                 }
 
             } else {
-
                 if (message.author == "<@198930470061211648>") {
                     //Xtr room for the roast command
                     let roastrnd = getRnd(1, 4)
@@ -349,8 +345,6 @@ client.on('message', message => {
                         default:
                             break;
                     }
-
-
                 } else if (message.author == "<@236622987506352128>") {
                     //Paco room for the roast command
                     let roastrnd = getRnd(1, 4)
@@ -387,7 +381,6 @@ client.on('message', message => {
                                 tts: true
                             });
                             break;
-
                         default:
                             break;
                     }
@@ -427,9 +420,7 @@ client.on('message', message => {
                             message.channel.send("Still can't reach Ak", {
                                 tts: true
                             });
-
                             break;
-
                         default:
                             break;
                     }
@@ -452,6 +443,22 @@ client.on('message', message => {
 
 
             break;
+
+
+            //Genshin bot commands
+
+            case 'artifacts':
+
+                 message.channel.send("This is all the Artifacts Genshi has in moment ")
+                 message.channel.send(```Name|2 piece bonus|4 piece bonus\n Adventurer|```)
+
+
+
+                break;
+            
+            
+            
+            
 
 
 
