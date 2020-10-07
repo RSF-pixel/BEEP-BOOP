@@ -33,10 +33,10 @@
 # Removed the rune random system from the bot temporary
 # Resolved some bugs regarding case sensitive on oof and trigger words
 #
-Alpha 0.3.1 Quality of life update
+Alpha 0.3.1 The social update 
 #
 # Added the _minecraft for the countdown for the next minecraft update
-# Added commands to genshin players including tier lists,Artifacts bonuses and so on 
 # Enchanted the _bored command to be suited for specific users needs(Xtr)
-#
+# The bot everyday will send the people to sleep at midnight
+# Added the _silence command
 #

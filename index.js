@@ -142,36 +142,96 @@ client.on('message', message => {
             break;
             //Bored command
         case 'bored':
+            if (message.author == "<@198930470061211648>") {
+                let rndbored = getRnd(1,11)
+                switch (rndbored) {
+                    case 1:
+                        message.channel.send("Rainbow")
+                        break;
+                    case 2:
+                        message.channel.send("Destiny 2")
+                        break;
+                    case 3:
+                        message.channel.send("League of legends")
+                        break;
+                    case 4:
+                        message.channel.send("Genshin")
+                        break;
+                    case 5:
+                        message.channel.send("Valorant")
+                        break;
+                    case 6:
+                        message.channel.send("Apex")
+                        break;
+                    case 7:
+                        message.channel.send("Call of Duty")
+                        break;
+                        case 8:
+                        message.channel.send("Left 4 Dead 2")
+                        break;
+                        case 9:
+                        message.channel.send("World war Z")
+                        break;
+                        case 10:
+                        message.channel.send("Ghost Recon")
+                        break;
+                        case 11:
+                        message.channel.send("Rocket League")
+                        break;
 
-            let rndbored = getRnd(1, 7)
-            switch (rndbored) {
-                case 1:
-                    message.channel.send("CS")
-                    break;
-                case 2:
-                    message.channel.send("League of Legends")
-                    break;
-                case 3:
-                    message.channel.send("Destiny 2")
-                    break;
-                case 4:
-                    message.channel.send("Europa universalis IV")
-                    break;
-                case 5:
-                    message.channel.send("Videos")
-                    break;
-                case 6:
-                    message.channel.send("Minecraft")
-                    break;
-                case 7:
-                    message.channel.send("Sleep")
-                    break;
+                    default:
+                        message.channel.send("Error")
+                        break;
 
-                default:
-                    message.channel.send("Error")
-                    break;
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            } else {
+                let rndbored = getRnd(1, 7)
+                switch (rndbored) {
+                    case 1:
+                        message.channel.send("CS")
+                        break;
+                    case 2:
+                        message.channel.send("League of Legends")
+                        break;
+                    case 3:
+                        message.channel.send("Destiny 2")
+                        break;
+                    case 4:
+                        message.channel.send("Europa universalis IV")
+                        break;
+                    case 5:
+                        message.channel.send("Videos")
+                        break;
+                    case 6:
+                        message.channel.send("Minecraft")
+                        break;
+                    case 7:
+                        message.channel.send("Sleep")
+                        break;
+
+                    default:
+                        message.channel.send("Error")
+                        break;
+
+                }
 
             }
+
+
             break;
             //Deceit infected
         case 'infected':
@@ -201,8 +261,14 @@ client.on('message', message => {
             let today = new Date();
             var prediction = new Date(today.getFullYear() + 1, 5, 1);
             var oneDay = 1000 * 60 * 60 * 24;
-            let time =(Math.ceil((prediction.getTime() - today.getTime()) / (oneDay)));            
+            let time = (Math.ceil((prediction.getTime() - today.getTime()) / (oneDay)) + "Days");
             message.channel.send("The new minecraft update doesn't have an official release date but it's said that it will be released mid 2021\n Based on my prediction the time left for the new minecraft update is" + time);
+            break;
+        case 'silence':
+            let personToSilence = (args[1] + "silence,peasant");
+            message.channel.send(personToSilence, {
+                tts: true
+            });
             break;
         case 'roast':
             //BEEP BOOP STONK POWER
@@ -415,7 +481,7 @@ client.on("message", async message => {
     let scheduledMessage = new cron.CronJob('59 59 23 * * *', () => {
         // Seconds Minutes Hours
         //Every day the bot sends a message telling the group to sleep at midnight
-        message.channel.send("SLEEP :rage:", {
+        message.channel.send("You should quit playing and sleep", {
             tts: true
         });
     });
