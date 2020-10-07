@@ -199,10 +199,10 @@ client.on('message', message => {
 
         case 'minecraft':
             let today = new Date();
-            var prediction = new Date(today.getFullYear(), 5, 1)
-            var oneDay = 1000 * 60 * 60 * 24
-            console.log(Math.ceil((prediction.getTime() - today.getTime()) / (oneDay)) + "days left until Christmas!");            
-            //message.channel.send("The new minecraft update doesn't have an official release date but it's said that it will be released mid 2021\n Based on my prediction the time left for the new minecraft update is ")
+            var prediction = new Date(today.getFullYear(), 5, 1);
+            var oneDay = 1000 * 60 * 60 * 24;
+            let time =(Math.ceil((prediction.getTime() - today.getTime()) / (oneDay)) + "days left until Christmas!");            
+            message.channel.send("The new minecraft update doesn't have an official release date but it's said that it will be released mid 2021\n Based on my prediction the time left for the new minecraft update is" + time);
             break;
         case 'roast':
             //BEEP BOOP STONK POWER
