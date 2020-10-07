@@ -436,29 +436,23 @@ client.on('message', message => {
 
 
             }
-
-
-
-
-
-
             break;
 
 
             //Genshin bot commands
 
-            case 'artifacts':
+        case 'artifacts':
 
-                 message.channel.send("This is all the Artifacts Genshi has in moment ")
-                 message.channel.send(```Name|2 piece bonus|4 piece bonus\n Adventurer|```)
+            message.channel.send("This is all the Artifacts Genshi impact has in moment ")
+            message.channel.send("```Name|2 piece bonus|4 piece bonus\n Adventurer|```")
 
 
 
-                break;
-            
-            
-            
-            
+        break;
+
+
+
+
 
 
 
