@@ -29,6 +29,21 @@ function getRnd(min, max) {
 const prefix = "_";
 let autor;
 //Ban and kick options only avaibable for the admins and botcontrollers respectively
+client.on('message',)
+{
+    //Sleep mechanic
+    let scheduledMessage = new cron.CronJob('59 59 23 * * *', () => {
+        // Seconds Minutes Hours
+        //Every day the bot sends a message telling the group to sleep at midnight
+        message.channel.send("You should quit playing and sleep", {
+            tts: true
+        });
+    });
+
+    // When you want to start it, use:
+    scheduledMessage.start()
+
+}
 client.on('message', message => {
     //CHANGE LATER WHEN BOT IS READY
     //The ids from the certain roles
@@ -465,17 +480,6 @@ client.on("message", async message => {
     //Checklist necessary for the bot to run
     if (message.channel.type != 'text' || message.author.bot) return;
     if (!message.guild) return; /* ANTI ERROR NAS DMS*/
-    //Sleep mechanic
-    let scheduledMessage = new cron.CronJob('59 59 23 * * *', () => {
-        // Seconds Minutes Hours
-        //Every day the bot sends a message telling the group to sleep at midnight
-        message.channel.send("You should quit playing and sleep", {
-            tts: true
-        });
-    });
-
-    // When you want to start it, use:
-    scheduledMessage.start()
     /*The bot divides the message that the user who made the request  and search for the trigger words and then he tells the user to stfu*/
     let messageraw = message.content.toLowerCase();
     autor = message.author;
