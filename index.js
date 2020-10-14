@@ -29,7 +29,7 @@ function getRnd(min, max) {
 const prefix = "_";
 let autor;
 //Ban and kick options only avaibable for the admins and botcontrollers respectively
-client.on('message',)
+client.on('message')
 {
     //Sleep mechanic
     let scheduledMessage = new cron.CronJob('59 59 23 * * *', () => {
