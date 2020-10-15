@@ -249,7 +249,7 @@ client.on('message', message => {
             var prediction = new Date(today.getFullYear() + 1, 5, 1);
             var oneDay = 1000 * 60 * 60 * 24;
             let time = (Math.ceil((prediction.getTime() - today.getTime()) / (oneDay)) + "Days");
-            message.channel.send("The new minecraft update doesn't have an official release date but it's said that it will be released mid 2021\n Based on my prediction the time left for the new minecraft update is " + time);
+            message.channel.send("The new minecraft update doesn't have an official release date but it's said that it will be released mid 2021\n Based on my prediction the time left for the new minecraft update is " + " " +time);
             break;
             //Silence command 
         case 'silence':
