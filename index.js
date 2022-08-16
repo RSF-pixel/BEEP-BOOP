@@ -22,7 +22,6 @@ client.on("ready", () => {
 //Prefix of the bot
 const prefix = "_";
 let autor;
-let scheduledMessage;
 //Ban and kick options only avaibable for the admins and botcontrollers respectively
 
 client.on("message", (message) => {
@@ -115,9 +114,30 @@ client.on("message", (message) => {
 
       break;
 
-
-    //Genshin bot commands
   }
+});
+
+client.on('presenceUpdate', (oldPresence, newPresence) => {
+    let member = newPresence.member;
+    // User id of the user you're tracking status.
+    if (member.id === '<userId>') {
+        if (oldPresence.status !== newPresence.status) {
+            // Your specific channel to send a message in.
+            let channel = member.guild.channels.cache.get('<channelId>');
+            // You can also use member.guild.channels.resolve('<channelId>');
+
+            let text = "";
+
+            if (newPresence.status === "online") {
+                text = "Our special member is online!";
+            } else if (newPresence.status === "offline") {
+                text = "Oh no! Our special member is offline.";
+            }
+            // etc...
+
+            channel.send(text);
+        }
+    }
 });
 
 client.login(process.env.token);
