@@ -40,3 +40,6 @@
 # The bot everyday will send the people to sleep at midnight
 # Added the _silence command
 #
+# Alpha 0.4 The Rework Update
+#
+# Removed almost all the commands for this update
