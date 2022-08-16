@@ -18,7 +18,6 @@ client.on("ready", () => {
   });
 });
 
-
 //Prefix of the bot
 const prefix = "_";
 let autor;
@@ -113,31 +112,25 @@ client.on("message", (message) => {
       );
 
       break;
-
   }
 });
 
-client.on('presenceUpdate', (oldPresence, newPresence) => {
-    let member = newPresence.member;
-    // User id of the user you're tracking status.
-    if (member.id === '<userId>') {
-        if (oldPresence.status !== newPresence.status) {
-            // Your specific channel to send a message in.
-            let channel = member.guild.channels.cache.get('<channelId>');
-            // You can also use member.guild.channels.resolve('<channelId>');
-
-            let text = "";
-
-            if (newPresence.status === "online") {
-                text = "Our special member is online!";
-            } else if (newPresence.status === "offline") {
-                text = "Oh no! Our special member is offline.";
-            }
-            // etc...
-
-            channel.send(text);
-        }
+client.on("presenceUpdate", (oldPresence, newPresence) => {
+  let member = newPresence.member;
+  let memberList = [];
+  if (memberList.includes(member.id)) {
+      if (oldPresence.status !== newPresence.status && oldPresence.status != "idle" || oldPresence.status != "dnd" && newPresence.status != "idle" || newPresence.status != "dnd") {
+        let date = new Date().toLocaleString();
+      }
+  }
+  else
+  {
+    memberList.push(member.id)
+    if (oldPresence.status !== newPresence.status && oldPresence.status != "idle" || oldPresence.status != "dnd" && newPresence.status != "idle" || newPresence.status != "dnd") {
+      // Your specific channel to send a message in.
+      let date = new Date().toLocaleString();
     }
+  }
 });
 
 client.login(process.env.token);
