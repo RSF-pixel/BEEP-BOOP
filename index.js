@@ -1,129 +1,35 @@
-//Config necessary for the bot run
-const {
-  Client
-} = require("discord.js");
-const dotenv = require('dotenv');
-dotenv.config();
+// Require the necessary discord.js classes
+const { Client, GatewayIntentBits } = require('discord.js');
+const {token} = require('./config.json');
 
-const client = new Client({
-  disableEveryone: true,
-});
-//If the bot is ready to go online he sends a message to the console and sets his precence to the desired one
-client.on("ready", () => {
-  console.log("BOT initiated BEEP BOOP , my name is " + client.user.username);
+// Create a new client instance
+const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+
+// When the client is ready, run this code (only once)
+client.once('ready', () => {
+	console.log('Ready!');
 
   client.user.setPresence({
     game: {
-      name: "Bot? hello?",
-      // type: "WATCHING"
+      name: "The great collapse of the server",
+      type: "WATCHING"
     },
   });
 });
 
-//Prefix of the bot
-const prefix = "_";
-let autor;
-//Ban and kick options only avaibable for the admins and botcontrollers respectively
+client.on('interactionCreate', async interaction => {
+	if (!interaction.isChatInputCommand()) return;
 
-client.on("message", (message) => {
-  let args = message.content.substring(prefix.length).split(" ");
-  autor = message.author;
-  switch (args[0]) {
-    //Kick option only avaibable to the bot controllers
-    // case "kick":
-    //   if (botcontroller) {
-    //     if (!args[1]) message.channel.send("DIGA ME UM!");
+	const { commandName } = interaction;
 
-    //     const user = message.mentions.users.first();
-    //     if (user) {
-    //       const member = message.guild.member(user);
-    //       if (member) {
-    //         member
-    //           .kick("Kicked!")
-    //           .then(() => {
-    //             message.reply(
-    //               "The member" + " " + user.tag + " " + "was kicked"
-    //             );
-    //           })
-    //           .catch((error) => {
-    //             message.reply("I was unable to kick the member");
-    //             console.log(error);
-    //           });
-    //       } else {
-    //         message.reply("That member is not in the server");
-    //       }
-    //     }
-    //   }
-    //   //In case that you try to ban a user that is more powerfull than you
-    //   else {
-    //     message.channel.send("You don't have enough power to this command");
-    //   }
-
-    //   break;
-
-    // case "ban":
-    //   //Ban option only avaibable to the Admins
-    //   if (admin) {
-    //     if (!args[1]) message.channel.send("DIGA ME UM!");
-    //     const user = message.mentions.users.first();
-    //     if (user) {
-    //       const member = message.guild.member(user);
-    //       if (member) {
-    //         member
-    //           .ban({
-    //             reason: "Imagine being Banned by a bot ",
-    //           })
-    //           .then(() => {
-    //             message.reply(
-    //               "The member" + " " + user.tag + " " + "was BANNED"
-    //             );
-    //           });
-    //       } else {
-    //         message.reply("That member is not in the server");
-    //       }
-    //     }
-    //   }
-    //   //Ban option only avaibable to the Admins
-    //   else {
-    //     message.channel.send("You don't have enough power to this command");
-    //   }
-
-    //   break;
-
-    //Ping option for checking possible problems with the api or bot
-    case "ping":
-      message.channel.send("Ping:\nLatency is" +
-        Math.floor(msg.createdTimestamp - message.createdTimestamp) +
-        "ms \n API Latency is " +
-        Math.round(client.ping) +
-        "ms");
-      break;
-
-      //Commands command just gives every command existent on the bot
-    case "commands":
-      message.channel.send(
-        "Commands\n _ping Checks the ping of the bot and the api lag\n _kick Kicks the person mentioned but you have to have the bot commander role\n _ban Bans the person mentioned but you have to be admin"
-      );
-
-      break;
-  }
+	if (commandName === 'ping') {
+		await interaction.reply('Pong!');
+	} else if (commandName === 'server') {
+		await interaction.reply(`Server name: ${interaction.guild.name}\nTotal members: ${interaction.guild.memberCount}`);
+	} else if (commandName === 'user') {
+		await interaction.reply(`Your tag: ${interaction.user.tag}\nYour id: ${interaction.user.id}`);
+	}
 });
 
-client.on("presenceUpdate", (oldPresence, newPresence) => {
-  //Force Restart delete later
-  let member = newPresence.member;
-  let memberList = [];
-  if (memberList.includes(member.id)) {
-    if (oldPresence.status !== newPresence.status && oldPresence.status != "idle" || oldPresence.status != "dnd" && newPresence.status != "idle" || newPresence.status != "dnd") {
-      let date = new Date().toLocaleString();
-    }
-  } else {
-    memberList.push(member.id)
-    if (oldPresence.status !== newPresence.status && oldPresence.status != "idle" || oldPresence.status != "dnd" && newPresence.status != "idle" || newPresence.status != "dnd") {
-      // Your specific channel to send a message in.
-      let date = new Date().toLocaleString();
-    }
-  }
-});
-
-client.login(process.env.token);
+// Login to Discord with your client's token
+client.login(token);
