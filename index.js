@@ -116,6 +116,7 @@ client.on("message", (message) => {
 });
 
 client.on("presenceUpdate", (oldPresence, newPresence) => {
+  //Force Restart delete later
   let member = newPresence.member;
   let memberList = [];
   if (memberList.includes(member.id)) {
