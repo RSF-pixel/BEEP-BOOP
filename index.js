@@ -1,5 +1,7 @@
 //Config necessary for the bot run
-const { Client } = require("discord.js");
+const {
+  Client
+} = require("discord.js");
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -90,18 +92,14 @@ client.on("message", (message) => {
 
     //Ping option for checking possible problems with the api or bot
     case "ping":
-      let msg = message.channel.send("Ping");
-      msg.edit(
-        "Ping:\nLatency is" +
-          Math.floor(msg.createdTimestamp - message.createdTimestamp) +
-          "ms \n API Latency is " +
-          Math.round(client.ping) +
-          "ms"
-      );
-
+      message.channel.send("Ping:\nLatency is" +
+        Math.floor(msg.createdTimestamp - message.createdTimestamp) +
+        "ms \n API Latency is " +
+        Math.round(client.ping) +
+        "ms");
       break;
 
-    //Commands command just gives every command existent on the bot
+      //Commands command just gives every command existent on the bot
     case "commands":
       message.channel.send(
         "Commands\n _ping Checks the ping of the bot and the api lag\n _kick Kicks the person mentioned but you have to have the bot commander role\n _ban Bans the person mentioned but you have to be admin"
@@ -116,12 +114,10 @@ client.on("presenceUpdate", (oldPresence, newPresence) => {
   let member = newPresence.member;
   let memberList = [];
   if (memberList.includes(member.id)) {
-      if (oldPresence.status !== newPresence.status && oldPresence.status != "idle" || oldPresence.status != "dnd" && newPresence.status != "idle" || newPresence.status != "dnd") {
-        let date = new Date().toLocaleString();
-      }
-  }
-  else
-  {
+    if (oldPresence.status !== newPresence.status && oldPresence.status != "idle" || oldPresence.status != "dnd" && newPresence.status != "idle" || newPresence.status != "dnd") {
+      let date = new Date().toLocaleString();
+    }
+  } else {
     memberList.push(member.id)
     if (oldPresence.status !== newPresence.status && oldPresence.status != "idle" || oldPresence.status != "dnd" && newPresence.status != "idle" || newPresence.status != "dnd") {
       // Your specific channel to send a message in.
