@@ -7,14 +7,14 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 // When the client is ready, run this code (only once)
 client.once('ready', () => {
 	console.log('Ready!');
+});
 
-  client.user.setPresence({
+client.user.setPresence({
     game: {
       name: "The great collapse of the server",
       type: "WATCHING"
     },
   });
-});
 
 client.on('interactionCreate', async interaction => {
 	if (!interaction.isChatInputCommand()) return;
