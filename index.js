@@ -33,12 +33,5 @@ for (const file of eventFiles) {
 	}
 }
 
-client.user.setPresence({
-    game: {
-      name: "The great collapse of the server",
-      type: "WATCHING"
-    },
-  });
-
 // Login to Discord with your client's token
 client.login(process.env.token);
