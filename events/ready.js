@@ -11,6 +11,6 @@ module.exports = {
             }],
             status:"Online"
         }
-        client.setPresence(data)
+        client.user.setPresence(data)
 	},
 };
