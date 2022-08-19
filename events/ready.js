@@ -9,7 +9,6 @@ module.exports = {
                 name: "the great collapse of the server",
                 type: "Watching"
             }],
-            status:"Online"
         }
         client.user.setPresence(data)
 	},
